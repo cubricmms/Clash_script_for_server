@@ -5,13 +5,13 @@ docker container rm clash-client
 
 # update latest config file
 
-wget -O $HOME/clash/config.yml $CONFIG_URL
+wget -O $HOME/Clash_script_for_server/config.yml $CONFIG_URL
 
 # 7890 http
 # 7891 https
 # 9090 restful api controller
 
-docker run -d --name clash-client --restart always -p 7890:7890 -p 7891:7891 -p 9090:9090 -v $HOME/clash/config.yml:/root/.config/clash/config.yaml dreamacro/clash-premium
+docker run -d --name clash-client --restart always -p 7890:7890 -p 7891:7891 -p 9090:9090 -v $HOME/Clash_script_for_server/config.yml:/root/.config/clash/config.yaml dreamacro/clash-premium
 
 # wait for services initiation
 while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:9090/proxies)" != "200" ]]; 
