@@ -1,0 +1,4 @@
+*.yml
+*.yaml
+.env
+.env/
