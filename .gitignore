@@ -1,4 +1,5 @@
 *.yml
 *.yaml
-.env
-.env/
+*.env
+*.env/
+*.zip
